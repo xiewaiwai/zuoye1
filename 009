@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url(图片1.webp);
+      font-size: 20px;
+    }
+
+    table {
+      width: 500px;
+      height: 100px;
+      margin: 200px auto;
+      font-size: 20px;
+    }
+    input,select{
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <td align="center" colspan="2">
+          <h2>新用户注册信息</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>用户名：</td>
+        <td>
+          <input type="text" id="user" style="height:30px;width:200px;" placeholder="请输入用户名"
+            onblur="myUser()">
+        </td>
+        <td>
+          <font color="yellow" id="user-tip"></font>
+        </td>
+
+      </tr>
+      <tr>
+        <td>密码：</td>
+        <td><input type="password" id="mima" style="height:30px;width:200px;" placeholder="请输入至少6位的密码"
+            onblur="myMima()"></td>
+        <td>
+          <font color="yellow" id="mima-tip"></font>
+        </td>
+      </tr>
+      <tr>
+        <td>性别：</td>
+        <td><input type="radio" name="sex" id="man" checked="checked">男
+          <input type="radio" name="sex" id="woman">女
+        </td>
+      </tr>
+      <tr>
+        <td>血型：</td>
+        <td><input type="radio" name="xue" id="o" checked="checake">O
+          <input type="radio" name="xue" id="a">A
+          <input type="radio" name="xue" id="b">B
+          <input type="radio" name="xue" id="ab">AB
+        </td>
+      </tr>
+      <tr>
+        <td>性格：</td>
+        <td><input type="checkbox" name="xin" id="qwe">热情大方
+          <input type="checkbox" name="xin" id="asd">温柔体贴
+          <input type="checkbox" name="xin" id="zxc">多情善感
+          <input type="checkbox" name="xin" id="mlp">高冷孤僻
+        </td>
+      </tr>
+      <tr>
+        <td>文件：</td>
+        <td>
+          <input type="text" style="height:30px;width:200px;" placeholder="选择">
+          <input type="button" value="浏览" sstyle="width:20px;height:10px;" />
+        </td>
+      </tr>
+      <tr>
+        <td>简介：</td>
+        <td><input type="text" style="height:30px;width:200px;"></td>
+      </tr>
+      <tr>
+        <td>城市：</td>
+        <td><select name="guo" id="guo" style="width: 200px;height: 30px;">
+        <option value="0">中国</option>
+        <option value="1">日本</option>
+        <option value="2">俄罗斯</option>
+        <option value="3">西班牙</option>
+        <option value="4">美国</option>
+        <option value="5">意大利</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="提交"></td>
+        <td><input type="reset" value="重置"></td>
+      </tr>
+    </table>
+    <script>
+      function myUser() {
+        var use = document.getElementById('user').value;
+        if (use == null || use == "") {
+          var tip1 = document.getElementById('user-tip');
+          tip1.innerHTML = "*用户名不能为空！";
+        } else {
+          var tip1 = document.getElementById('user-tip');
+          tip1.innerHTML = "<font color='green'>*用户名合法！</font>";
+        }
+      }
+
+      function myMima() {
+        var mima = document.getElementById('mima').value;
+        var tip2 = document.getElementById('mima-tip');
+        if (mima.length < 6 || mima == "") {
+          tip2.innerHTML = "*密码最少6位！"
+        } else {
+          tip2.innerHTML = "<font color='green'>*密码合法！</font>"
+        }
+      }
+    </script>
+  </body>
+</html>
